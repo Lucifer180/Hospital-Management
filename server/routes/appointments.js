@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Appointment = require('../models/Appointment');
 
-// Get all appointments
+
 router.route('/').get(async (req, res) => {
     try {
         const appointments = await Appointment.find();
@@ -12,7 +12,7 @@ router.route('/').get(async (req, res) => {
     }
 });
 
-// Add a new appointment
+
 router.route('/add').post(async (req, res) => {
     const { patientName, doctorName, date } = req.body;
 
@@ -30,7 +30,7 @@ router.route('/add').post(async (req, res) => {
     }
 });
 
-// Update an appointment
+
 router.route('/update/:id').put(async (req, res) => {
     try {
         const appointment = await Appointment.findById(req.params.id);
@@ -50,7 +50,7 @@ router.route('/update/:id').put(async (req, res) => {
     }
 });
 
-// Delete an appointment
+
 router.route('/delete/:id').delete(async (req, res) => {
     try {
         const appointment = await Appointment.findByIdAndDelete(req.params.id);

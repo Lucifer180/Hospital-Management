@@ -94,14 +94,14 @@ const Patients = () => {
       </div>
       <div className="patients-section">
         <h3 style={{ textAlign: 'center' }}>
-          Patients ({patients.length})
+          Patients ({patients.length})  
         </h3>
         <div className="patient-list">
           {patients.map(patient => (
             <PatientsCard
               key={patient._id}
               patient={patient}
-              onEdit={handleEditPatient}
+              OnEdit={handleEditPatient}
               onDelete={handleDeletePatient}
             />
           ))}
